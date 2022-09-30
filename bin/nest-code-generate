@@ -21,19 +21,20 @@
     v table_name*n module --tier
     v table_name*n module --curd
   */
-const program = require("commander");
-const { Parse } = require("../lib/index");
+console.log('2');
+const program = require('commander');
+const { Parse } = require('../lib/index');
 
 program
-  .version(`nest-code-generate@${require("../package.json").version}`)
-  .usage(
-    "<table_name2,table_name2...> [dir]"
-  );
+  .version(`nest-code-generate@${require('../package.json').version}`)
+  .usage('<table_name2,table_name2...> [dir]');
 
 program
-  .argument("<table-name>", "Name of the data table(数据表名称)")
-  .argument('[dir]', 'The name of the folder to mount, "src" by default(要挂载的文件夹名称, 默认src)')
+  .argument('<table-name>', 'Name of the data table(数据表名称)')
+  .argument(
+    '[dir]',
+    'The name of the folder to mount, "src" by default(要挂载的文件夹名称, 默认src)'
+  )
   .action((tableName, dir) => new Parse(tableName, dir));
 
 program.parse(process.argv);
-

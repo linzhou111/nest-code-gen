@@ -41,10 +41,10 @@
   ],
   "devDependencies": {
     "@types/commander": "^2.12.2",
-    "@types/yaml": "^1.9.7",
     "@types/dotenv": "^8.2.0",
     "@types/ejs": "^3.1.0",
     "@types/fs-extra": "^9.0.12",
-    "@types/node": "^16.7.6"
+    "@types/node": "^16.7.6",
+    "@types/yaml": "^1.9.7"
   }
 }
