@@ -22,9 +22,42 @@
     v table_name*n module --curd
   */
 console.log('2');
+
 const program = require('commander');
 const { Parse } = require('../lib/index');
+// tmg();
+//生成entity
+global.tmg = () => {
+  var argv = [
+    '',
+    '',
+    '-h',
+    'localhost',
+    '-d',
+    'my-admin',
+    '-p',
+    '3306',
+    '-u',
+    'root',
+    '-x',
+    'zhoulin111',
+    '-e',
+    'mysql',
+    '-o',
+    'entities',
+    '--noConfig',
+    'true',
+    '--ce',
+    'pascal',
+    '--cp',
+    'camel',
+    '--tables',
+    'user',
+  ];
 
+  require('../typeorm-model-generator/bin/main').execArgv(argv);
+  // node ./bin/tmg -h localhost -d my-admin -p 3306 -u root -x zhoulin111 -e mysql -o entities --noConfig true --ce pascal --cp camel --tables user
+};
 program
   .version(`nest-code-generate@${require('../package.json').version}`)
   .usage('<table_name2,table_name2...> [dir]');

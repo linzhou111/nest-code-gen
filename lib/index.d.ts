@@ -1,4 +1,4 @@
-import "dotenv/config";
+import 'dotenv/config';
 import { ExternalOptions, Options } from './typings/types';
 export declare class Parse {
     tableName: string;
@@ -15,4 +15,5 @@ export declare class Parse {
     generateTier(): Promise<void>;
     generateCURD(): Promise<void>;
     generateAll(): Promise<void>;
+    generateWithEntity(): Promise<void>;
 }
